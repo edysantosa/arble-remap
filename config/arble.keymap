@@ -26,10 +26,10 @@
 
         arrow {
             bindings = <
-&kp END  &trans    &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6             &kp F7          &kp F8          &kp F9     &kp F10  &kp F11  &kp F12          &trans  &trans
-&trans   &kp CAPS  &trans  &trans  &trans  &trans  &trans  &kp C_VOLUME_UP    &kp HOME        &kp UP_ARROW    &kp END    &trans   &trans   &trans           &trans
-&trans   &trans    &trans  &trans  &trans  &trans  &trans  &kp C_VOLUME_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &trans   &trans   &rgb_ug RGB_TOG
-&trans   &trans    &trans  &trans  &trans  &trans  &trans  &trans             &trans          &trans          &trans     &trans   &trans   &mo 3
+&kp END  &trans    &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6             &kp F7          &kp F8          &kp F9     &kp F10          &kp F11  &kp F12          &trans  &trans
+&trans   &kp CAPS  &trans  &trans  &trans  &trans  &trans  &kp C_VOLUME_UP    &kp HOME        &kp UP_ARROW    &kp END    &kp PRINTSCREEN  &trans   &trans           &trans
+&trans   &trans    &trans  &trans  &trans  &trans  &trans  &kp C_VOLUME_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &trans           &trans   &rgb_ug RGB_TOG
+&trans   &trans    &trans  &trans  &trans  &trans  &trans  &trans             &trans          &trans          &trans     &trans           &trans   &mo 3
 &trans   &trans    &trans  &trans  &trans  &trans  &trans
             >;
         };
@@ -46,7 +46,7 @@
 
         reset_boot {
             bindings = <
-&bt BT_SEL 0  &bt BT_CLR    &sl 0   &sl 2   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &bootloader  &sys_reset
+&bt BT_SEL 0  &bt BT_CLR    &to 0   &to 2   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &bootloader  &sys_reset
 &bt BT_SEL 1  &out OUT_BLE  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &bt BT_SEL 2  &out OUT_USB  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &out OUT_TOG  &trans        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
