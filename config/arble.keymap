@@ -15,10 +15,6 @@
 #define ARROW 2
 #define RESET_BOOT 3
 
-&soft_off {
-    hold-time-ms = <5000>; // Only turn off it the key is held for 5 seconds or longer.
-};
-
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -55,11 +51,11 @@
 
         reset_boot {
             bindings = <
-                &soft_off  &bt BT_CLR    &tog GAMING    &trans        &trans        &trans        &trans        &trans  &trans        &trans  &trans  &trans  &trans  &trans  &bootloader  &sys_reset
-                &trans     &trans        &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2  &trans        &out OUT_TOG  &trans  &out OUT_USB  &trans  &trans  &trans  &trans  &trans  &trans
-                &trans     &trans        &trans         &trans        &trans        &trans        &trans        &trans  &trans        &trans  &trans  &trans  &trans  &trans
-                &trans     &trans        &trans         &trans        &trans        &out OUT_BLE  &trans        &trans  &trans        &trans  &trans  &trans  &trans  &trans
-                &trans     &trans        &trans         &trans        &trans        &trans        &trans
+                &trans  &bt BT_CLR    &tog GAMING    &trans        &trans        &trans        &trans        &trans  &trans        &trans  &trans  &trans  &trans  &trans  &bootloader  &sys_reset
+                &trans  &trans        &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2  &trans        &out OUT_TOG  &trans  &out OUT_USB  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans        &trans         &trans        &trans        &trans        &trans        &trans  &trans        &trans  &trans  &trans  &trans  &trans
+                &trans  &trans        &trans         &trans        &trans        &out OUT_BLE  &trans        &trans  &trans        &trans  &trans  &trans  &trans  &trans
+                &trans  &trans        &trans         &trans        &trans        &trans        &trans
             >;
         };
     };
