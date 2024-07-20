@@ -15,6 +15,10 @@
 #define ARROW 2
 #define RESET_BOOT 3
 
+&soft_off {
+    hold-time-ms = <5000>; // Only turn off it the key is held for 5 seconds or longer.
+};
+
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -41,7 +45,7 @@
 
         arrow {
             bindings = <
-                &kp END  &trans           &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6             &kp F7          &kp F8          &kp F9     &kp F10          &kp F11  &kp F12          &trans  &trans
+                &kp END  &soft_off        &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6             &kp F7          &kp F8          &kp F9     &kp F10          &kp F11  &kp F12          &trans  &trans
                 &trans   &kp CAPS         &trans  &trans  &trans  &trans  &trans  &kp C_VOLUME_UP    &kp HOME        &kp UP_ARROW    &kp END    &kp PRINTSCREEN  &trans   &trans           &trans
                 &trans   &kp LEFT_CONTROL &trans  &trans  &trans  &trans  &trans  &kp C_VOLUME_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &trans           &trans   &trans
                 &trans   &trans           &trans  &trans  &trans  &trans  &trans  &trans             &trans          &trans          &trans     &trans           &trans   &mo RESET_BOOT
@@ -51,11 +55,11 @@
 
         reset_boot {
             bindings = <
-                &bt BT_SEL 0  &bt BT_CLR    &tog GAMING  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &bootloader  &sys_reset
-                &bt BT_SEL 1  &out OUT_BLE  &trans       &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                &bt BT_SEL 2  &out OUT_USB  &trans       &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                &out OUT_TOG  &trans        &trans       &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                &trans        &trans        &trans       &trans  &trans  &trans  &trans
+                &trans  &bt BT_CLR    &tog GAMING    &trans        &trans        &trans        &trans        &trans  &trans        &trans  &trans  &trans  &trans  &trans  &bootloader  &reset
+                &trans  &trans        &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2  &trans        &out OUT_TOG  &trans  &out OUT_USB  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trams        &trans         &trans        &trans        &trans        &trans        &trans  &trans        &trans  &trans  &trans  &trans  &trans
+                &trans  &trans        &trans         &trans        &trans        &out OUT_BLE  &trans        &trans  &trans        &trans  &trans  &trans  &trans  &trans
+                &trans  &trans        &trans         &trans        &trans        &trans        &trans
             >;
         };
     };
